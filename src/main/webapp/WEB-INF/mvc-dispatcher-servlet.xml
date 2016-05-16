@@ -36,6 +36,7 @@
         <property name="persistenceUnitName" value="defaultPersistenceUnit"/>
     </bean>
 
+    <!--JSON View-->
     <!-- 事务管理 -->
     <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
         <property name="entityManagerFactory" ref="entityManagerFactory"/>
