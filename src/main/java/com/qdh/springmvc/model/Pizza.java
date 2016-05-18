@@ -19,11 +19,12 @@ public class Pizza {
 
     public Pizza(String name) {
         this.name = name;
-        this.flavor="spicy";
+        this.flavor = "spicy";
         this.toppings.add("Chinese");
         this.toppings.add("Aliea");
     }
 
+    @XmlElement
     public String getName() {
         return name;
     }
@@ -36,6 +37,7 @@ public class Pizza {
         return flavor;
     }
 
+    @XmlElement
     public void setFlavor(String flavor) {
         this.flavor = flavor;
     }
@@ -44,6 +46,7 @@ public class Pizza {
         return toppings;
     }
 
+    @XmlElement
     public void setToppings(List<String> toppings) {
         this.toppings = toppings;
     }

@@ -2,15 +2,15 @@ package com.qdh.springmvc.configure;
 
 import com.qdh.springmvc.viewresolver.JsonViewResolver;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
 import org.springframework.web.accept.ContentNegotiationManager;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.ContentNegotiationConfigurer;
-import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.ContentNegotiatingViewResolver;
-import org.springframework.web.servlet.view.InternalResourceViewResolver;
-import org.springframework.web.servlet.view.JstlView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,6 +19,10 @@ import java.util.List;
  * Created by lyqdhgo on 2016/5/18.
  * 建立它用于通过委托给ContentNegotiationManager，以确定所请求的媒体类型的请求是 ContentNegotiationStrategy 列表的一个实例
  */
+
+@Configuration
+@EnableWebMvc
+@ComponentScan(basePackages = "com.qdh.springmvc")
 public class AppConfig extends WebMvcConfigurerAdapter {
     @Override
     public void configureContentNegotiation(ContentNegotiationConfigurer configurer) {
