@@ -1,4 +1,4 @@
-package com.qdh.springmvc;
+package com.qdh.springmvc.controller;
 
 import com.gaussic.User;
 import org.springframework.stereotype.Controller;
@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 /**
  * Created by lyqdhgo on 2016/5/18.
  * 添加控制器
+ * 此类对应HelloInitializer初始化类
+ * 一个程序中最多只有一个初始化
  */
 @Controller
 @RequestMapping("/hello")
