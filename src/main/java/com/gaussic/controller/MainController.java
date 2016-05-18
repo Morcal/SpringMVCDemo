@@ -7,6 +7,7 @@ import com.gaussic.model.UserEntity;
 import com.gaussic.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
@@ -24,6 +25,7 @@ import java.util.concurrent.atomic.AtomicLong;
 
 /**
  * Created by dzkan on 2016/3/8.
+ * 添加控制器
  */
 @Controller
 public class MainController {
@@ -110,6 +112,26 @@ public class MainController {
         }
         return "book.default";
     }
+
+
+    @RequestMapping("/model")
+    public String userInfo(Model model, @RequestParam(value = "name", defaultValue = "Guest") String name) {
+        model.addAttribute("name", name);
+        if ("admin".equals(name)) {
+            model.addAttribute("email", "lyqdhgo@163.com");
+        } else {
+            model.addAttribute("email", "qidh@xinli.com.cn");
+        }
+        return "userInfo";
+    }
+
+    // 返回简单字符串
+    @RequestMapping("/string")
+    @ResponseBody
+    public String returnString(Model model) {
+        return "qdh";
+    }
+
 
     // 返回jsonView 这个不行
     @RequestMapping("/user/add")
