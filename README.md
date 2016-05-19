@@ -123,7 +123,11 @@ public class JsonViewResolver implements ViewResolver {
         return view;
     }
 }
-```
+```  
+
+## @RestController使用
+
+
 
 ## Introduction
 
